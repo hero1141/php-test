@@ -27,7 +27,7 @@
 
 }
 
-#main{
+#cont{
 
     min-height:300px;
 
@@ -45,7 +45,7 @@
             <button id="tabela">Pokaz wykres</button>
         </div>
 
-        <div class="col-md-12 text-center well" id="main"></div>
+        <div class="col-md-12 text-center well" id="cont"><span id="main"></span></div>
 
         <div class="footer well col-md-12" style="margin-top:20px;">To jest stopka projektu</div>
 
@@ -57,9 +57,15 @@
 
         $("button").on('click', function(){
             var id = this.id;
-            $.ajax({url: "app/views/"+id+".php", success: function(result){
-                $("#main").html(result);
-            }});
+            $("#main").fadeOut(100, function(){
+                $("#main").fadeIn("slow");
+
+                $.ajax({url: "app/views/"+id+".php", success: function(result){
+                    $("#main").html(result);
+                }});
+            });
+
+
         });
 
     });
