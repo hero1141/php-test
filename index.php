@@ -1,3 +1,6 @@
+<?php
+require_once("app/helpers/connect.php");
+?>
 <!DOCTYPE html>
 <html>
 <head>
