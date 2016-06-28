@@ -1,5 +1,6 @@
 <?php
-require_once("app/helpers/connect.php");
+require_once('app/helpers/connect.php');
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -46,6 +47,7 @@ require_once("app/helpers/connect.php");
             <button id="about">O mnie</button>
             <button id="contact">Kontakt</button>
             <button id="tabela">Pokaz wykres</button>
+            <button id="pracownicy">Lista pracownikow</button>
         </div>
 
         <div class="col-md-12 text-center well" id="cont"><span id="main"></span></div>
@@ -60,8 +62,8 @@ require_once("app/helpers/connect.php");
 
         $("button").on('click', function(){
             var id = this.id;
-            $("#main").fadeOut(100, function(){
-                $("#main").fadeIn("slow");
+            $("#main").fadeOut(500, function(){
+                $("#main").fadeIn("fast");
 
                 $.ajax({url: "app/views/"+id+".php", success: function(result){
                     $("#main").html(result);
