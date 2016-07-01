@@ -1,15 +1,16 @@
 <?php
 require_once('app/helpers/connect.php');
-
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 <title>Ajax Website</title>
 <!-- Latest compiled and minified CSS -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
+<script src="http://code.jquery.com/jquery-1.9.0.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.0.0.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<script src="app/assets/javascript/main.js"></script>
 <style>
 #nav{
 
@@ -48,6 +49,7 @@ require_once('app/helpers/connect.php');
             <button id="contact">Kontakt</button>
             <button id="tabela">Pokaz wykres</button>
             <button id="pracownicy">Lista pracownikow</button>
+            <button id="addworker">Dodaj pracownika</button>
         </div>
 
         <div class="col-md-12 text-center well" id="cont"><span id="main"></span></div>
@@ -56,25 +58,5 @@ require_once('app/helpers/connect.php');
 
     </div>
 
-<script>
-
-    $(document).on('ready', function(){
-
-        $("button").on('click', function(){
-            var id = this.id;
-            $("#main").fadeOut(500, function(){
-                $("#main").fadeIn("fast");
-
-                $.ajax({url: "app/views/"+id+".php", success: function(result){
-                    $("#main").html(result);
-                }});
-            });
-
-
-        });
-
-    });
-
-</script>
 </body>
 </html>
