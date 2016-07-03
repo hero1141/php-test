@@ -5,7 +5,7 @@ require_once('app/helpers/connect.php');
 <html>
 <head>
 <title>Ajax Website</title>
-<!-- Latest compiled and minified CSS -->
+
 
 <script src="http://code.jquery.com/jquery-1.9.0.js"></script>
 <script src="http://code.jquery.com/jquery-migrate-1.0.0.js"></script>
@@ -41,15 +41,13 @@ require_once('app/helpers/connect.php');
 </style>
 </head>
 <body>
-
     <div class="container">
-
         <div class="navbar nav well">
-            <button id="about">O mnie</button>
-            <button id="contact">Kontakt</button>
-            <button id="tabela">Pokaz wykres</button>
-            <button id="pracownicy">Lista pracownikow</button>
-            <button id="addworker">Dodaj pracownika</button>
+            <button id="site/about">O mnie</button>
+            <button id="site/contact">Kontakt</button>
+            <button id="site/tabela">Pokaz wykres</button>
+            <button id="pracownicy/pracownicy">Lista pracownikow</button>
+            <button id="pracownicy/addworker">Dodaj pracownika</button>
         </div>
 
         <div class="col-md-12 text-center well" id="cont"><span id="main"></span></div>
@@ -57,6 +55,5 @@ require_once('app/helpers/connect.php');
         <div class="footer well col-md-12" style="margin-top:20px;">To jest stopka projektu</div>
 
     </div>
-
 </body>
 </html>
